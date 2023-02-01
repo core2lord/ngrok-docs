@@ -5,11 +5,11 @@ sidebar_position: 5
 # Global Infrastructure
 --------------
 
-ngrok runs globally distributed tunnel servers around the world to enable fast, low latency traffic to your applications.
+ngrok runs a globally distributed collection of tunnel servers reaching around the world enabling traffic with fast, low latency communications to your applications.
 
 ### Locations {#locs}
 
-ngrok runs servers in data centers around the world. The location of the data center within a given region may change without notice (e.g. the European servers may move from Frankfurt to London).
+ngrok servers are deployed in data centers around the world. The location of the data center within a given region may change without notice (e.g. the European servers may move from Frankfurt to London).
 
 | Region Code | Location |
 | --- | --- |
@@ -33,8 +33,8 @@ Reserved domains and TCP addresses are allocated for a specific region (the US r
 
 ### Limitations {#limits}
 
-An ngrok agent may only be connected a single region, meaning you cannot host tunnels in multiple regions simultaneously with the same agent. You can run multiple ngrok agents if you need to do this.
+An ngrok agent instance may only be assigned to a single region (one-to-one association). If more are needed, then for each additional region, a separate agent would be required. For example, an agent connected to the |US| region would not be able to create an additional tunnel to the |EU| region. Multiple agent setups are permitted. 
 
-A domain cannot be reserved for multiple regions at the same time. It is not possible to geo-balance DNS to the same tunnel name in multiple regions. Use region-specific subdomains or TLDs if you need to do this.
+A domain may only be reserved for a single region at a time. It is not possible to geo-balance DNS for the same tunnel name in multiple regions. As an alternative, you may use region-specific subdomains or TLDs if the need arises.
 
-An ngrok Edge can only contain endpoints in the same region.
+An ngrok Edge can only maintain a collection of endpoints that are within the same region.
